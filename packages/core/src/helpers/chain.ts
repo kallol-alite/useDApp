@@ -6,6 +6,7 @@ function etherscanNetworkPrefix(chainId: ChainId) {
       return ``
     case ChainId.Ropsten:
     case ChainId.Kovan:
+    case ChainId.BSCTest:
     case ChainId.Rinkeby:
     case ChainId.Goerli:
       return getChainName(chainId).toLocaleLowerCase() + '.'
@@ -28,12 +29,6 @@ export function getExplorerAddressLink(address: string, chainId: ChainId) {
       return `https://explorer-mainnet.maticvigil.com/address/${address}/transactions`
     case ChainId.Mumbai:
       return `https://explorer-mumbai.maticvigil.com/address/${address}/transactions`
-    case ChainId.Harmony:
-      return `https://explorer.harmony.one/address/${address}`
-    case ChainId.Moonriver:
-      return `https://blockscout.moonriver.moonbeam.network/address/${address}/transactions`
-    case ChainId.Palm:
-      return `https://explorer.palm.io/address/${address}`
   }
 }
 
@@ -43,6 +38,8 @@ export function getExplorerTransactionLink(transactionHash: string, chainId: Cha
     case ChainId.Ropsten:
     case ChainId.Kovan:
     case ChainId.Rinkeby:
+    case ChainId.BSCTest:
+      return `https://testnet.bscscan.com/tx/${transactionHash}`
     case ChainId.Goerli:
       return `https://${etherscanNetworkPrefix(chainId)}etherscan.io/tx/${transactionHash}`
     case ChainId.BSC:
@@ -53,12 +50,6 @@ export function getExplorerTransactionLink(transactionHash: string, chainId: Cha
       return `https://explorer-mainnet.maticvigil.com/tx/${transactionHash}/internal-transactions`
     case ChainId.Mumbai:
       return `https://explorer-mumbai.maticvigil.com/tx/${transactionHash}/internal-transactions`
-    case ChainId.Harmony:
-      return `https://explorer.harmony.one/tx/${transactionHash}`
-    case ChainId.Moonriver:
-      return `https://blockscout.moonriver.moonbeam.network/tx/${transactionHash}/internal-transactions`
-    case ChainId.Palm:
-      return `https://explorer.palm.io/tx/${transactionHash}`
   }
 }
 

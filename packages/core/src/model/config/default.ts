@@ -15,15 +15,10 @@ export const DEFAULT_CONFIG: FullConfig = {
     ChainId.Hardhat,
     ChainId.Polygon,
     ChainId.Mumbai,
-    ChainId.Harmony,
-    ChainId.Moonriver,
-    ChainId.Palm,
+    ChainId.BSCTest
   ],
   notifications: {
     checkInterval: 500,
     expirationPeriod: 5000,
-  },
-  localStorage: {
-    transactionPath: 'transactions',
   },
 }
